@@ -6,9 +6,9 @@ const router = express.Router()
 
 
 router.get('/', ctrl.listContacts)
-router.get('/:contactId', ctrl.getContactById)
+router.get('/:id', ctrl.getContactById)
 router.post('/', ctrl.addContact)
-router.delete('/:contactId', ctrl.removeContact)
-router.put('/:contactId', ctrl.updateById)
+router.delete('/:id', ctrl.removeContact)
+router.put('/:id', ctrl.updateById)
 
 module.exports = router

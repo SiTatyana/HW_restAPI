@@ -10,8 +10,8 @@ const updateById = async (req, res, next) => {
       if(error) {
         throw HttpError(400, error.message);
       }
-      const {contactId} = req.params;
-      const result = await contacts.updateById(contactId, req.body);
+      const {id} = req.params;
+      const result = await contacts.updateById(id, req.body);
       if(!result) {
         throw HttpError(404, "Not found")
       }

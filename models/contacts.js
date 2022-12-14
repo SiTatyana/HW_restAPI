@@ -16,18 +16,18 @@ async function listContacts() {
     return contacts;
   }
   
-  async function getContactById(contactId) {
+  async function getContactById(id) {
     const contacts = await listContacts();
-    const result = contacts.find(item => item.id === String(contactId));
+    const result = contacts.find(item => item.id === String(id));
     if(!result){
         return null;
     }
     return result;
   }
   
-  async function removeContact(contactId) {
+  async function removeContact(id) {
     const contacts = await listContacts();
-    const idx = contacts.findIndex(item => item.id === String(contactId));
+    const idx = contacts.findIndex(item => item.id === String(id));
     if(idx === -1){
       return null
     }
@@ -49,14 +49,14 @@ async function listContacts() {
     return newContact;
   }
 
-  async function updateById (contactId, data) {
+  async function updateById (id, data) {
     const contacts = await listContacts();
-    const index = contacts.findIndex(item => item.id === String(contactId));
+    const index = contacts.findIndex(item => item.id === String(id));
     if(index === -1) {
       return null;
     }
 
-    contacts[index] = {contactId, ...data};
+    contacts[index] = {id, ...data};
     await updateContacts(contacts);
     return contacts[index];
   }
