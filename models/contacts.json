@@ -60,17 +60,6 @@
     "phone": "(748) 206-2688"
   },
   {
-    "id": "bc2e6919-a7b1-486e-8f38-1d02171a2bde",
-    "name": "Charlie Chaplin",
-    "email": "chaplin@warnerbrothers.us",
-    "phone": "(294) 840-4444"
-  },
-  {
-    "id": "b62bb1da-b607-4db6-a449-2e49de3352d9",
-    "name": "Marlyn Monro",
-    "email": "super-blonde@mail.com"
-  },
-  {
     "id": "d3302595-dc75-4325-9dc8-870f694c5f73",
     "name": "Marlyn Monro",
     "email": "super-blonde@mail.com",
@@ -81,5 +70,11 @@
     "name": "Jim Kerry",
     "email": "YahooJim@mail.com",
     "phone": "(111) 333-4444"
+  },
+  {
+    "id": "d5ce7d3c-04cb-481b-ac83-8c283e0650ac",
+    "name": "Mr Bin",
+    "email": "MrBin@mail.com",
+    "phone": "(111) 333-4555"
   }
 ]
