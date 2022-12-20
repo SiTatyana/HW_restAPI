@@ -1,8 +1,8 @@
-const contacts = require("../../models/contacts");
+const {Contact} = require("../../models/contact");
 
 const {HttpError} = require("../../helpers");
+const { addShema } = require("../../models/contact");
 
-const {addShema} = require ("../../shemas/contacts");
 
 const updateById = async (req, res, next) => {
     try{
@@ -11,9 +11,9 @@ const updateById = async (req, res, next) => {
         throw HttpError(400, error.message);
       }
       const {id} = req.params;
-      const result = await contacts.updateById(id, req.body);
+      const result = await Contact.findByIdAndUpdate(id, req.body, {new:true});
       if(!result) {
-        throw HttpError(404, "Not found")
+        throw HttpError(404, "This id not found")
       }
       res.json(result);
   
