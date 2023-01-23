@@ -6,6 +6,8 @@ const { User } = require("../../models/user");
 
 const { HttpError, sendEmail } = require("../../helpers");
 
+const {BASE_URL} = process.env;
+
 const signup = async(req, res) => {
    const {email, password} = req.body;
 
@@ -23,7 +25,7 @@ const newUser = await User.create({...req.body, password: hashPassword, avatarUR
 const verifyEmail = {
     to: email,
     subject: "Verify your email",
-    html:`<a target="_blank" href="http://localhost:3000/api/users/verify/${verificationCode}">Click verify email</a> `,
+    html:`<a target="_blank" href="${BASE_URL}/api/users/verify/${verificationCode}">Click verify email</a> `,
 }
 
 await sendEmail(verifyEmail);
