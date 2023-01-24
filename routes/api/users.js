@@ -4,14 +4,16 @@ const ctrl = require("../../controllers/users")
 
 const { validateBody, authenticate, upload } = require('../../middlewares');
 
-const { signupShema, loginShema } = require("../../models/user")
+const { signupShema, loginShema, emailShema } = require("../../models/user")
 
 const router = express.Router();
 
 //signup
 router.post("/signup", validateBody(signupShema), ctrl.signup )
 
+router.get("/verify/:verificationCode", ctrl.verify)
 
+ router.post("/verify", validateBody(emailShema), ctrl.resendVerifyEmail)
 //signin
 router.post("/login", validateBody(loginShema), ctrl.login)
 
